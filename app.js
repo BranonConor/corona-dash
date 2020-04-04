@@ -26,6 +26,6 @@ app.get('/', (req, res) => {
 });
 
 //enable listening for server
-app.listen(4000, process.env.IP, (req, res) => {
-    console.log('Server listening on port 4000');
+app.listen(process.env.PORT, process.env.IP, (req, res) => {
+    console.log('Server listening');
 });
