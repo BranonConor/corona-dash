@@ -1,0 +1,24 @@
+<%- include('./partial/head.ejs') %>
+
+<div class="nav">
+    <a><h1><i class="fas fa-virus"></i>Coronavirus Tracker</h1></a>
+    <div class="socials">
+        <a><i class="fab fa-github"></i></a>
+        <a><i class="fab fa-linkedin"></i></a>
+        <a><i class="fas fa-user"></i></a>
+    </div>
+</div>
+<div class='dashboard'>
+    <div class="sidebar component">
+        <h2 class='card-title'><i class="fas fa-globe-americas"></i>Global Statistics</h2>
+        <p><%- data.response.All %></p>
+    </div>
+    <div class='country-list component'>
+        <h2 class='card-title'><i class="far fa-flag"></i>Confirmed Cases by Country</h2>
+        <% data.response.forEach(country => { %>
+            <h4 class='country'><span class='name'><%- country.country %></span><span class='count'><%- country.cases.active %></span></h4>
+        <% }) %> 
+    </div>
+</div>
+
+<%- include('./partial/footer.ejs') %>
