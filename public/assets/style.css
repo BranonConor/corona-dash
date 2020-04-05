@@ -25,10 +25,12 @@ body {
 }
 a {
     transition: 0.2s ease all;
+    text-decoration: none;
+    color: var(--main-accent)
 }
 a:hover {
     cursor: pointer;
-    color: var(--main-accent);
+    color: var(--accent3);
     transform: translateY(-3px);
 }
 /* --------- NAVIGATION ------------ */
