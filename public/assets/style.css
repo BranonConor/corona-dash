@@ -23,6 +23,10 @@ body {
     padding: 0;
     margin: 0;
 }
+canvas {
+    width: 400px;
+    height: auto;
+}
 a {
     transition: 0.2s ease all;
     text-decoration: none;
@@ -155,9 +159,19 @@ a:hover {
 .new-num {
     color: var(--accent4);
 }
+/* --------- GRAPHS COMPONENT ------------ */
+.graphs {
+    width: 45%;
+    height: 40vh;
+}
+/* --------- RESOURCES COMPONENT ------------ */
+.resources {
+    width: 45%;
+    height: 40vh;
+}
 
 
-
+/* --------- FOOTER ------------ */
 .footer {
     display: flex;
     flex-direction: column;
@@ -172,7 +186,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 1200px) {
-    .global-statistics, .country-list {
+    .global-statistics, .country-list, .graphs, .resources {
         width: 80%;
     }
 }
