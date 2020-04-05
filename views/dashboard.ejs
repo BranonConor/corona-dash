@@ -25,6 +25,8 @@
         <% let recoveryRate = ((global.response[0].cases.recovered) / (global.response[0].cases.total) * 100); %>
         <p class='statistic'><span class='stat'>Effective Death Rate</span><span class='stat-num'><%- deathRate %>%</span></p>
         <p class='statistic'><span class='stat'>Effective Recovery Rate</span><span class='new-num'><%- recoveryRate %>%</span></p>
+        <h3><i class="fas fa-exclamation-triangle"></i>A Note About the Data</h3>
+        <p class='statistic'>The calculated death/recovery rates are purely a function of the total confirmed cases. As you may be aware, there are many obstacles to determining the actual amount of cases in the world, like testing constraints, asymptomatic carriers, etc. Please keep this in mind when refering to the calculated values and the data upon which they are derived.</p>
     </div>
     <div class='country-list component'>
         <h2 class='card-title'><i class="far fa-flag"></i>Country Statistics</h2>
@@ -33,5 +35,6 @@
         <% }) %> 
     </div>
 </div>
+<div class="notes"></div>
 
 <%- include('./partial/footer.ejs') %>
