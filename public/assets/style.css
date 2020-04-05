@@ -132,7 +132,7 @@ a:hover {
 .count {
     color: var(--main-accent);
 }
-.sidebar {
+.global-statistics {
     width: 45%;
     height: 80vh;
 }
@@ -170,7 +170,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 1200px) {
-    .sidebar, .country-list {
+    .global-statistics, .country-list {
         width: 80%;
     }
 }
