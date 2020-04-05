@@ -289,3 +289,39 @@ a:hover {
 	-moz-transform: scale(0.55);
 	transform: scale(0.55);
 }
+.x6 {
+	-webkit-animation: animateVirus 20s linear infinite;
+	-moz-animation: animateVirus 20s linear infinite;
+	animation: animateVirus 20s linear infinite;
+	
+	-webkit-transform: scale(0.4);
+	-moz-transform: scale(0.4);
+	transform: scale(0.4);
+}
+.x7 {
+	-webkit-animation: animateVirus 15s linear infinite;
+	-moz-animation: animateVirus 15s linear infinite;
+	animation: animateVirus 15s linear infinite;
+	
+	-webkit-transform: scale(0.50);
+	-moz-transform: scale(0.50);
+	transform: scale(0.50);
+}
+.x8 {
+	-webkit-animation: animateVirus 27s linear infinite;
+	-moz-animation: animateVirus 27s linear infinite;
+	animation: animateVirus 27s linear infinite;
+	
+	-webkit-transform: scale(0.23);
+	-moz-transform: scale(0.23);
+	transform: scale(0.23);
+}
+.x9 {
+	-webkit-animation: animateVirus 42s linear infinite;
+	-moz-animation: animateVirus 42s linear infinite;
+	animation: animateVirus 42s linear infinite;
+	
+	-webkit-transform: scale(0.58);
+	-moz-transform: scale(0.58);
+	transform: scale(0.58);
+}
