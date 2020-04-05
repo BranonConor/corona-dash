@@ -1,9 +1,11 @@
+/* --------- GLOBAL STYLES ------------ */
 :root {
     --bg: #eee;
     --secondary-bg: white;
     --main-accent: #6564DB;
     --accent2: #101D42;
-    --accent3: #DEE3E8;
+    --accent3: #8E1F33;
+    --accent4: #92B28E;
 }
 
 html {
@@ -29,6 +31,7 @@ a:hover {
     color: var(--main-accent);
     transform: translateY(-3px);
 }
+/* --------- NAVIGATION ------------ */
 .nav {
     width: 100%;
     height: 60px;
@@ -52,6 +55,12 @@ a:hover {
 }
 .nav h1 i {
     margin: 0 7px;
+    animation: rotate 7s infinite;
+}
+@keyframes rotate {
+    0% {transform: rotate(0deg) translateY(0)}
+    50% {transform: rotate(180deg) translateY(7px)}
+    100% {transform: rotate(360deg) translateY(0)}
 }
 .nav i {
     font-size: 2rem;
@@ -69,7 +78,7 @@ a:hover {
     display: flex;
     align-items: center;
 }
-
+/* --------- GENERAL COMPONENT STYLES ------------ */
 .dashboard {
     display: flex;
     flex-wrap: wrap;
@@ -77,6 +86,7 @@ a:hover {
     justify-content: center;
     margin: 100px 0 50px 0;
     position: relative;
+    width: 100%;
 }
 .component {
     -webkit-box-shadow: 0px 2px 17px -2px rgba(0,0,0,0.48);
@@ -92,7 +102,19 @@ a:hover {
     color: var(--main-accent);
     margin: 0 10px;
 }
-.country {
+.card-title {
+    position: sticky;
+    top: 0;
+    border-radius: 15px;
+    background: var(--secondary-bg);
+    padding: 5px;
+    -webkit-box-shadow: 0px 3px 21px -8px rgba(0,0,0,0.45);
+    -moz-box-shadow: 0px 3px 21px -8px rgba(0,0,0,0.45);
+    box-shadow: 0px 3px 21px -8px rgba(0,0,0,0.45);
+}
+
+/* --------- COUNTRY COMPONENT ------------ */
+.country, .statistic {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,11 +140,18 @@ a:hover {
     width: 45%;
     height: 80vh;
 }
-.card-title {
-    position: sticky;
-    top: 0;
-}
 
+
+/* --------- GLOBAL COMPONENT ------------ */
+.stat {
+    color: var(--accent2);
+}
+.stat-num {
+    color: var(--accent3);
+}
+.new-num {
+    color: var(--accent4);
+}
 
 
 
@@ -138,4 +167,23 @@ a:hover {
 }
 .footer p {
     margin: 5px 0 0 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar, .country-list {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .nav h1 {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+    .nav i {
+        font-size: 1.25rem;
+    }
+    .socials {
+        margin-right: 10px;
+    }
 }

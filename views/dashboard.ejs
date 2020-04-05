@@ -11,12 +11,20 @@
 <div class='dashboard'>
     <div class="sidebar component">
         <h2 class='card-title'><i class="fas fa-globe-americas"></i>Global Statistics</h2>
-        <p><%- data.response.All %></p>
+        <h3><i class="fas fa-briefcase-medical"></i>Confirmed Cases</h3>
+        <p class='statistic'><span class='stat'>Total Confirmed Cases</span><span class='stat-num'><%- global.response[0].cases.total %></span></p>
+        <p class='statistic'><span class='stat'>New Confirmed Cases</span><span class='new-num'><%- global.response[0].cases.new %></span></p>
+        <p class='statistic'><span class='stat'>Active Confirmed Cases</span><span class='stat-num'><%- global.response[0].cases.active %></span></p>
+        <p class='statistic'><span class='stat'>Current Critical Cases</span><span class='stat-num'><%- global.response[0].cases.critical %></span></p>
+        <p class='statistic'><span class='stat'>Recovered Cases</span><span class='new-num'><%- global.response[0].cases.recovered %></span></p>
+        <h3><i class="fas fa-skull-crossbones"></i>Casualties</h3>
+        <p class='statistic'><span class='stat'>Total Deaths</span><span class='stat-num'><%- global.response[0].deaths.total %></span></p>
+        <p class='statistic'><span class='stat'>New Deaths</span><span class='new-num'><%- global.response[0].deaths.new %></span></p>
     </div>
     <div class='country-list component'>
         <h2 class='card-title'><i class="far fa-flag"></i>Confirmed Cases by Country</h2>
-        <% data.response.forEach(country => { %>
-            <h4 class='country'><span class='name'><%- country.country %></span><span class='count'><%- country.cases.active %></span></h4>
+        <% countries.response.forEach(country => { %>
+            <h4 class='country'><span class='name'><%- country.country %></span><span class='count'><%- country.cases.total %></span></h4>
         <% }) %> 
     </div>
 </div>
