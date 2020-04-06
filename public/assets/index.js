@@ -45,3 +45,11 @@ fetch("https://covid-193.p.rapidapi.com/history?country=all", {
 .catch(err => {
 	console.log(err);
 });
+
+// Initiate loading animation on graph element, which stops and renders those components after 3s
+const loader = document.querySelector('.loader');
+setTimeout(removeLoader, 3000);
+function removeLoader() {
+    loader.style.display = 'none';
+}
+

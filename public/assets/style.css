@@ -343,7 +343,7 @@ a:hover {
 .loader {
     color: var(--accent3);
     font-size: 20px;
-    margin: 100px auto;
+    margin: 125px auto;
     width: 1em;
     height: 1em;
     border-radius: 50%;
@@ -354,6 +354,7 @@ a:hover {
     -webkit-transform: translateZ(0);
     -ms-transform: translateZ(0);
     transform: translateZ(0);
+    display: block;
   }
   @-webkit-keyframes load4 {
     0%,
