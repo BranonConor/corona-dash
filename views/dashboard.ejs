@@ -73,10 +73,14 @@
             <p class='statistic'>The database that this dataset comes from began its record of daily totals on March 21st, 2020. This is why this graph displays daily global confirmed case totals beginning on that date.</p>
         </div>
         <div class='country-list component'>
-            <h2 class='card-title'><i class="far fa-flag"></i>Country Statistics</h2>
+            <h2 class='card-title'><i class="far fa-flag"></i>Country Confirmed Cases</h2>
             <% countries.response.forEach(country => { %>
                 <p class='country'><span class='name'><%- country.country %></span><span class='count'><%- country.cases.total %></span></p>
             <% }) %> 
+        </div>
+        <div class="country-search component">
+            <h2 class='card-title'><i class="fas fa-search-location"></i>Search a Country</h2>
+            <p class='statistic'>Coming soon!</p>
         </div>
         <div class="resources component">
             <h2 class='card-title'><i class="fas fa-hands-helping"></i>Helpful Resources</h2>
