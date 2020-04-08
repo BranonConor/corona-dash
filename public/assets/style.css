@@ -135,11 +135,7 @@ a:hover {
 .count {
     color: var(--main-accent);
 }
-.global-statistics {
-    width: 45%;
-    height: 80vh;
-}
-.country-list {
+.global-statistics, .country-list, .country-search {
     width: 45%;
     height: 80vh;
 }
@@ -160,10 +156,11 @@ a:hover {
     width: 45%;
     height: 80vh;
 }
+
 /* --------- RESOURCES COMPONENT ------------ */
 .resources {
-    width: 45%;
-    height: 40vh;
+    width: 93%;
+    height: 20vh;
 }
 
 
@@ -182,7 +179,7 @@ a:hover {
 }
 
 @media only screen and (max-width: 1200px) {
-    .global-statistics, .country-list, .graphs, .resources {
+    .global-statistics, .country-list, .graphs, .country-search, .resources {
         width: 80%;
     }
     .graphs {
