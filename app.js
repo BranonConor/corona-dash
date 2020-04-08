@@ -61,11 +61,53 @@ app.get('/', (req, res) => {
             });
         }
 
-        res.render('dashboard', {countries: result[0].countries, global: result[1].global, history: result[2].history});
+        request(countrySearchURL, getSearchData);
+    };
+    let query = (req.query.search) || 'usa';
+    const countrySearchURL = {
+        url: `https://covid-193.p.rapidapi.com/countries?search=${query}`,
+        headers: {
+            "x-rapidapi-host": "covid-193.p.rapidapi.com",
+	        "x-rapidapi-key": "942dc0b96amsh67348984a504c37p1b0743jsne53b8b41b9a9"       
+        }
+    };
+    getSearchData = (error, response, body) => {   
+        if(!error && response.statusCode === 200) {
+            let searchData = JSON.parse(body);
+            console.log(searchData);
+            result.push({
+                searched: searchData
+            });
+        }
+        res.render('dashboard', {
+            countries: result[0].countries,
+            global: result[1].global,
+            history: result[2].history,
+            search: result[3].searched
+        });
     };
     // make a call to the API and render the dashboard page with its data
     request(countryURL, getCountryData);
 });
+
+// Country Search Route
+// app.get('/countries', (req, res) => {
+//     let query = (req.query.search);
+//     const countrySearchURL = {
+//         url: `https://covid-193.p.rapidapi.com/countries?search=${query}`,
+//         headers: {
+//             "x-rapidapi-host": "covid-193.p.rapidapi.com",
+// 	        "x-rapidapi-key": "942dc0b96amsh67348984a504c37p1b0743jsne53b8b41b9a9"       
+//         }
+//     };
+//     getSearchData = (error, response, body) => {   
+//         if(!error && response.statusCode === 200) {
+//             let searchData = JSON.parse(body);
+//             res.send({search: searchData});
+//         }
+//     };
+//     request(countrySearchURL, getSearchedData);
+// });
 
 
 //enable listening for server
