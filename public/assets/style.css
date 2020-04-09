@@ -203,7 +203,20 @@ input:nth-of-type(2) {
     width: 45%;
     height: 80vh;
 }
-
+/* -------- COUNTRY SEARCH ----------- */
+.searched-country {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: 50px;
+    font-weight: bold;
+    background: var(--bg);
+    border-radius: 15px;
+    padding: 10px;
+}
+.searched-country .heading {
+    margin: 0;
+    padding: 0;
+}
 /* --------- RESOURCES COMPONENT ------------ */
 .resources {
     width: 93%;

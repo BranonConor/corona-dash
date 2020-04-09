@@ -82,11 +82,25 @@
             <div class="search-title">
                 <h2><i class="fas fa-search-location"></i>Search a Country</h2>
                 <form action="/" method='GET'>
-                    <input type="text" name='search' placeholder='USA'>
+                    <input type="text" name='search'>
                     <input type="submit" class='button' value='Search' class='btn'>
                 </form>
             </div>
-            <p class='statistic'>Coming soon!</p>
+            <div class="searched-country">
+                <p class='heading'><i class="far fa-flag"></i><%- search.response[0].country %></p>
+                <p class='heading'><%- search.response[0].day %></p>
+            </div>
+            <h3><i class="fas fa-briefcase-medical"></i>Confirmed Cases</h3>
+            <p class='statistic'><span class='stat'>Total Confirmed Cases</span><span class='stat-num'><%- search.response[0].cases.total %></span></p>
+            <p class='statistic'><span class='stat'>New Confirmed Cases</span><span class='new-num'><%- search.response[0].cases.new %></span></p>
+            <p class='statistic'><span class='stat'>Active Confirmed Cases</span><span class='stat-num'><%- search.response[0].cases.active %></span></p>
+            <p class='statistic'><span class='stat'>Current Critical Cases</span><span class='stat-num'><%- search.response[0].cases.critical %></span></p>
+            <p class='statistic'><span class='stat'>Recovered Cases</span><span class='new-num'><%- search.response[0].cases.recovered %></span></p>
+            <h3><i class="fas fa-skull-crossbones"></i>Casualties</h3>
+            <p class='statistic'><span class='stat'>Total Deaths</span><span class='stat-num'><%- search.response[0].deaths.total %></span></p>
+            <p class='statistic'><span class='stat'>New Deaths</span><span class='new-num'><%- search.response[0].deaths.new %></span></p>
+            <h3><i class="fas fa-vial"></i>Testing</h3>
+            <p class='statistic'><span class='stat'>Total Tests Performed</span><span class='new-num'><%- search.response[0].tests.total %></span></p>
         </div>
         <div class="resources component">
             <h2 class='card-title'><i class="fas fa-hands-helping"></i>Helpful Resources</h2>
