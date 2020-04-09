@@ -65,7 +65,7 @@ app.get('/', (req, res) => {
     };
     let query = (req.query.search) || 'usa';
     const countrySearchURL = {
-        url: `https://covid-193.p.rapidapi.com/countries?search=${query}`,
+        url: `https://covid-193.p.rapidapi.com/statistics?country=${query}`,
         headers: {
             "x-rapidapi-host": "covid-193.p.rapidapi.com",
 	        "x-rapidapi-key": "942dc0b96amsh67348984a504c37p1b0743jsne53b8b41b9a9"       
@@ -74,7 +74,6 @@ app.get('/', (req, res) => {
     getSearchData = (error, response, body) => {   
         if(!error && response.statusCode === 200) {
             let searchData = JSON.parse(body);
-            console.log(searchData);
             result.push({
                 searched: searchData
             });
