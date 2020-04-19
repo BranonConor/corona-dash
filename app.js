@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 const request = require('request');
 const path = require('path');
-
+ 
 //initialize EJS
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '/public')));
@@ -20,13 +20,6 @@ app.get('/', (req, res) => {
     }
     const globalURL = {
         url: 'https://covid-193.p.rapidapi.com/statistics?country=all',
-        headers: {
-            "x-rapidapi-host": "covid-193.p.rapidapi.com",
-	        "x-rapidapi-key": "942dc0b96amsh67348984a504c37p1b0743jsne53b8b41b9a9"       
-        }
-    }
-    const historyURL = {
-        url: 'https://covid-193.p.rapidapi.com/history?country=all',
         headers: {
             "x-rapidapi-host": "covid-193.p.rapidapi.com",
 	        "x-rapidapi-key": "942dc0b96amsh67348984a504c37p1b0743jsne53b8b41b9a9"       
@@ -51,16 +44,6 @@ app.get('/', (req, res) => {
             });
         }
 
-        request(historyURL, getHistoryData);
-    };
-    getHistoryData = (error, response, body) => {   
-        if(!error && response.statusCode === 200) {
-            let historyData = JSON.parse(body);
-            result.push({
-                history: historyData
-            });
-        }
-
         request(countrySearchURL, getSearchData);
     };
     let query = (req.query.search) || 'usa';
@@ -81,8 +64,7 @@ app.get('/', (req, res) => {
         res.render('dashboard', {
             countries: result[0].countries,
             global: result[1].global,
-            history: result[2].history,
-            search: result[3].searched
+            search: result[2].searched
         });
     };
     // make a call to the API and render the dashboard page with its data
