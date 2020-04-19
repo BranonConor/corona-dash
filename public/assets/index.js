@@ -1,6 +1,9 @@
-// Declare container for data from our API Call
+// Declare containers for data from our API Call
+const result = [];
 const historicalDays = []
 const historicalCases = []
+
+//call for the country history data over time to render in ChartJS
 fetch("https://covid-193.p.rapidapi.com/history?country=all", {
 	"method": "GET",
 	"headers": {
@@ -46,10 +49,11 @@ fetch("https://covid-193.p.rapidapi.com/history?country=all", {
 	console.log(err);
 });
 
-// Initiate loading animation on graph element, which stops and renders those components after 3s
+
+
+// Initiate loading animation, which stops and renders those components after 3s
 const loader = document.querySelector('.loader');
 setTimeout(removeLoader, 3000);
 function removeLoader() {
     loader.style.display = 'none';
 }
-
